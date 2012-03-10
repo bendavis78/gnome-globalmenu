@@ -70,8 +70,8 @@ internal class MenubarSuperrider{
 
 		super(widget, ref natural, ref minimal);
 
-		natural = 10;
-		minimal = 10;
+		natural = 0;
+		minimal = 0;
 	}
 #else
 	public static void size_request(Gtk.Widget? widget, ref Gtk.Requisition req) {

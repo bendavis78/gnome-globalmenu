@@ -1,0 +1,19 @@
+First install the following packages:
+
+    sudo apt-get install valac-0.12 libvala-0.12-dev libgtk-3-dev gobject-introspection libgirepository1.0-dev libgtk2.0-dev autotools-dev automake autoconf intltool libtool
+
+Then:
+
+    autoreconf --force --install --verbose
+    ./autogen.sh --prefix=/usr
+    make
+    sudo make GTK2_MODULES_DIR=/usr/lib/gtk-2.0/modules GTK3_MODULES_DIR=/usr/lib/gtk-3.0/modules GLIB_COMPILE_SCHEMAS=/bin/true install
+    sudo glib-compile-schemas /usr/share/glib-2.0/schemas
+
+Create a file in $HOME/.config/gtk-3.0/gtk.css with the following contents:
+
+    .menubar .menuitem {
+        padding: 0;
+    }
+
+Restart Gnome.  It may be necessary to just reboot altogether.
